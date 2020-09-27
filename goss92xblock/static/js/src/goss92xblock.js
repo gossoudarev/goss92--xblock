@@ -3,6 +3,9 @@ function Goss92XBlock(runtime, element) {
 
     window.updateScore = function (result) {
         $('.score', element).text(result.score);
+        localStorage['score'] = result.score;
+        localStorage['score_' + Math.random()] = result.score;
+
     }
 
     window.handlerUrl = runtime.handlerUrl(element, 'set_score2');
